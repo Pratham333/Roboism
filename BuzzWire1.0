@@ -1,0 +1,66 @@
+#include <LiquidCrystal.h>
+LiquidCrystal lcd(12,10,7,6,5,4);
+int buzz=9;
+int rec=8;
+int counter;
+int IR=2;
+int score=100;
+void setup()
+{  
+  pinMode(IR, INPUT);
+  pinMode(rec, INPUT);
+  pinMode(buzz,OUTPUT);
+  digitalWrite(buzz,LOW);
+  lcd.begin(16,2);
+  lcd.setCursor(0,0);
+  lcd.print("Welcome to buzz wire game");
+  delay(5000);
+  lcd.clear();   }
+void loop()
+{
+  if(digitalRead(rec==HIGH))
+  {
+    digitalWrite(buzz,HIGH);
+    delay(1000);
+    digitalWrite(buzz,LOW);
+    counter=counter+1;
+    lcd.print(counter+".");
+  }
+ if(digitalRead(IR==HIGH))
+ {
+  lcd.clear();
+  lcd.print("You have finished the game");
+  delay(2000);
+  lcd.clear();
+  if(counter<10)
+  {
+    score=score-(counter*10);
+    lcd.print("Your number of penalties is "+counter);
+    delay(2000);
+    lcd.clear();
+    lcd.print("Hence your score is "+score);
+    delay(3000);
+    lcd.clear();
+    lcd.print("Thank you for playing");
+    delay(60000);
+  }
+  
+
+
+else
+  {
+    score=0;
+    lcd.print("Your number of penalties is "+counter);
+    delay(2000);
+    lcd.clear();
+    lcd.print("You have exceeded the penalties given");
+    delay(3000);
+    lcd.clear();
+    lcd.print("As a result your score is 0");
+    delay(2000);
+    lcd.clear();
+    lcd.print("Better Luck Next Time");
+    delay(60000);
+  }
+ }
+}
