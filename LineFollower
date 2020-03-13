@@ -1,0 +1,41 @@
+int IRL=0;
+int IRR=1;
+int LM1=8;
+int LM2=9;
+int RM1=10;
+int RM2=11;
+
+void setup() 
+{
+  pinMode(IRL,INPUT);
+  pinMode(IRR,INPUT);
+  pinMode(LM1,OUTPUT);
+  pinMode(LM2,OUTPUT);
+  pinMode(RM1,OUTPUT);
+  pinMode(RM2,OUTPUT);
+}
+
+void loop()
+{
+  if(digitalRead(IRL)==HIGH&&digitalRead(IRR)==HIGH)//Move Forward 
+  {
+    digitalWrite(LM1,HIGH);
+    digitalWrite(LM2,LOW);
+    digitalWrite(RM1,HIGH);
+    digitalWrite(RM1,LOW);
+  }
+  if(digitalRead(IRL)==HIGH&&digitalRead(IRR)==LOW)//Turn Right
+  {
+    digitalWrite(LM1,LOW);
+    digitalWrite(LM2,LOW);
+    digitalWrite(RM1,HIGH);
+    digitalWrite(RM1,LOW);
+  }
+  if(digitalRead(IRL)==LOW&&digitalRead(IRR)==HIGH)//Turn Left
+  {
+    digitalWrite(LM1,HIGH);
+    digitalWrite(LM2,LOW);
+    digitalWrite(RM1,LOW);
+    digitalWrite(RM1,LOW);
+  }
+}
