@@ -1,0 +1,208 @@
+void setup() {
+pinMode(2,OUTPUT);
+pinMode(3,OUTPUT);
+pinMode(13,OUTPUT);
+pinMode(7,INPUT);//structure&input
+pinMode(5,OUTPUT);
+pinMode(6,OUTPUT);
+pinMode(8, OUTPUT);
+pinMode(9, OUTPUT);
+pinMode(10, OUTPUT);
+pinMode(11, OUTPUT);
+pinMode(12, OUTPUT);
+
+digitalWrite(10,HIGH) ;
+digitalWrite(13,HIGH) ;//handloop
+Serial.begin(9600);  // put your setup code here, to run once:
+
+}
+
+void loop() 
+{
+int i=0;
+int s=0;
+while(s<10)
+{ 
+  while(digitalRead(7)==HIGH)
+{
+  i++;
+}
+  if(i>0)
+  {
+  s++;
+  i=0;
+  }
+  if (s==0)
+  {
+    n0();
+    delay(100);
+  }
+  else if(s==1)
+  {
+    n1();
+    delay(100); 
+  }
+   else if(s==2)
+  {
+    n2();
+    delay(100); 
+  }
+   else if(s==3)
+  {
+    n3();
+    delay(100); 
+  }
+   else if(s==4)
+  {
+    n4();
+    delay(100); 
+  }
+   else if(s==5)
+  {
+    n5();
+    delay(100); 
+  }
+   else if(s==6)
+  {
+    n6();
+    delay(200); 
+  }
+   else if(s==7)
+  {
+    n7();
+    delay(200); 
+  }
+   else if(s==8)
+  {
+    n8();
+    delay(200); 
+  }
+   else if(s==9)
+  {
+    n9();
+    delay(200); 
+  }
+}
+}
+void n1(){
+     digitalWrite(2, HIGH ) ;
+     digitalWrite(3, HIGH ) ;
+   
+     digitalWrite(5, HIGH ) ;
+     digitalWrite(6, LOW ) ;
+    
+     digitalWrite(8, LOW ) ;
+     digitalWrite(9, HIGH ) ;
+     digitalWrite(11, HIGH) ;
+     digitalWrite(12, LOW) ;
+}
+void n2(){
+     digitalWrite(2, LOW ) ;
+     digitalWrite(3, HIGH ) ;
+   
+     digitalWrite(5, LOW ) ;
+     digitalWrite(6, LOW ) ;
+    
+     digitalWrite(8, HIGH ) ;
+     digitalWrite(9, LOW ) ;
+     digitalWrite(11, LOW) ;
+     digitalWrite(12, LOW) ;
+}
+void n3(){
+     digitalWrite(2, LOW ) ;
+     digitalWrite(3, HIGH ) ;
+   
+     digitalWrite(5, LOW ) ;
+     digitalWrite(6, LOW ) ;
+    
+     digitalWrite(8, LOW ) ;
+     digitalWrite(9, LOW ) ;
+     digitalWrite(11, HIGH) ;
+     digitalWrite(12, LOW) ;
+}
+void n4(){
+     digitalWrite(2, LOW ) ;
+     digitalWrite(3, LOW ) ;
+   
+     digitalWrite(5, HIGH ) ;
+     digitalWrite(6, LOW ) ;
+    
+     digitalWrite(8, HIGH ) ;
+     digitalWrite(9, LOW ) ;
+     digitalWrite(11, LOW) ;
+     digitalWrite(12, HIGH) ;
+}
+void n5(){
+     digitalWrite(2, LOW ) ;
+     digitalWrite(3, LOW ) ;
+   
+     digitalWrite(5, LOW ) ;
+     digitalWrite(6, HIGH ) ;
+    
+     digitalWrite(8, HIGH ) ;
+     digitalWrite(9, LOW ) ;
+     digitalWrite(11, LOW) ;
+     digitalWrite(12, LOW) ;
+}
+void n6(){
+     digitalWrite(2, LOW ) ;
+     digitalWrite(3, LOW ) ;
+   
+     digitalWrite(5, LOW ) ;
+     digitalWrite(6, HIGH ) ;
+    
+     digitalWrite(8, LOW ) ;
+     digitalWrite(9, LOW ) ;
+     digitalWrite(11, LOW) ;
+     digitalWrite(12, LOW) ;
+}
+void n7(){
+    digitalWrite(2, HIGH ) ;
+     digitalWrite(3, HIGH ) ;
+   
+     digitalWrite(5, LOW ) ;
+     digitalWrite(6, LOW ) ;
+    
+     digitalWrite(8, HIGH ) ;
+     digitalWrite(9, HIGH ) ;
+     digitalWrite(11, LOW) ;
+     digitalWrite(12, LOW) ;
+}
+void n8(){
+     digitalWrite(2, LOW ) ;
+     digitalWrite(3, LOW ) ;
+   
+     digitalWrite(5, LOW ) ;
+     digitalWrite(6, LOW ) ;
+    
+     digitalWrite(8, LOW ) ;
+     digitalWrite(9, LOW ) ;
+     digitalWrite(11, LOW) ;
+     digitalWrite(12, LOW) ;
+}
+void n9(){
+     digitalWrite(2, LOW ) ;
+     digitalWrite(3, LOW ) ;
+   
+     digitalWrite(5, LOW ) ;
+     digitalWrite(6, LOW ) ;
+    
+     digitalWrite(8, HIGH ) ;
+     digitalWrite(9, LOW ) ;
+     digitalWrite(11, LOW) ;
+     digitalWrite(12, LOW) ;
+}
+void n0(){
+     digitalWrite(2, HIGH ) ;
+     digitalWrite(3, LOW ) ;
+   
+     digitalWrite(5, LOW ) ;
+     digitalWrite(6, LOW ) ;
+    
+     digitalWrite(8,LOW) ;
+     digitalWrite(9, LOW ) ;
+     digitalWrite(11, LOW) ;
+     digitalWrite(12, LOW) ;
+     }
+
+
